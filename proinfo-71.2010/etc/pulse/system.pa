@@ -19,6 +19,9 @@
 # This startup script is used only if PulseAudio is started in system
 # mode.
 
+#######
+# MODIFIQUE O CAMPO device= ABAIXO DE ACORDO COM O SEU HARDWARE
+#######
 load-module module-alsa-sink device=hw:1,0 sink_name=seat0
 load-module module-alsa-sink device=hw:0,0 sink_name=seat1
 load-module module-alsa-sink device=hw:2,0 sink_name=seat2
