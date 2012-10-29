@@ -1,0 +1,11 @@
+[Session Entry]
+Name=Local
+Type=LoginWindow
+Description=Local Login Screen
+DisplayTemplate=Local
+
+[Local]
+display=:1
+vt=vt8
+xorgconf=xorg.seat1.conf
+sharevts=-sharevts

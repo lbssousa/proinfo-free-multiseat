@@ -1,0 +1,11 @@
+[Session Entry]
+Name=Seat0
+Type=LoginWindow
+Description=Local Login Screen
+DisplayTemplate=Local
+
+[Local]
+display=:0
+vt=vt7
+xorgconf=xorg.seat0.conf
+sharevts=
