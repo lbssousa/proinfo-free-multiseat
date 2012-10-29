@@ -1,0 +1,5 @@
+SUBSYSTEM=="input", ENV{ID_INPUT.tags}="input_default"
+
+# Modifique o campo DEVPATH== abaixo de acordo com o seu hardware
+SUBSYSTEM=="input", DEVPATH=="/devices/pci0000:00/0000:00:1d.7/usb1/1-1/*", ENV{ID_INPUT.tags}="input_seat0"
+SUBSYSTEM=="input", DEVPATH=="/devices/pci0000:00/0000:00:1d.7/usb1/1-4/*", ENV{ID_INPUT.tags}="input_seat1"
