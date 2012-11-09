@@ -10,11 +10,11 @@ SUBSYSTEM=="sound", DEVPATH=="/devices/pci0000:00/0000:00:1d.7/usb1/1-4/*", ENV{
 KERNEL=="mouse*", ENV{ID_INPUT.tags}=="input_seat0", SYMLINK+="multiseat/seat0/mouse"
 KERNEL=="mouse*", ENV{ID_INPUT.tags}=="input_seat1", SYMLINK+="multiseat/seat1/mouse"
 
-KERNEL=="event*", ENV{ID_INPUT_MOUSE}==1, ENV{ID_INPUT.tags}=="input_seat0", SYMLINK+="multiseat/seat0/event-mouse"
-KERNEL=="event*", ENV{ID_INPUT_MOUSE}==1, ENV{ID_INPUT.tags}=="input_seat1", SYMLINK+="multiseat/seat1/event-mouse"
+KERNEL=="event*", ENV{ID_INPUT_MOUSE}=="1", ENV{ID_INPUT.tags}=="input_seat0", SYMLINK+="multiseat/seat0/event-mouse"
+KERNEL=="event*", ENV{ID_INPUT_MOUSE}=="1", ENV{ID_INPUT.tags}=="input_seat1", SYMLINK+="multiseat/seat1/event-mouse"
 
-KERNEL=="event*", ENV{ID_INPUT_KEYBOARD}==1, ENV{ID_INPUT.tags}=="input_seat0", SYMLINK+="multiseat/seat0/keyboard"
-KERNEL=="event*", ENV{ID_INPUT_KEYBOARD}==1, ENV{ID_INPUT.tags}=="input_seat1", SYMLINK+="multiseat/seat1/keyboard"
+KERNEL=="event*", ENV{ID_INPUT_KEYBOARD}=="1", ENV{ID_INPUT.tags}=="input_seat0", SYMLINK+="multiseat/seat0/keyboard"
+KERNEL=="event*", ENV{ID_INPUT_KEYBOARD}=="1", ENV{ID_INPUT.tags}=="input_seat1", SYMLINK+="multiseat/seat1/keyboard"
 
 KERNEL=="control*", ENV{ID_INPUT.tags}=="sound_seat0", SYMLINK+="multiseat/seat0/sound"
 KERNEL=="control*", ENV{ID_INPUT.tags}=="sound_seat1", SYMLINK+="multiseat/seat1/sound"
