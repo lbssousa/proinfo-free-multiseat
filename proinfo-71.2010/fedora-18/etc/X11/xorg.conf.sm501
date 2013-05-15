@@ -1,0 +1,24 @@
+Section "Device"
+    BusID "PCI:4:1:0"
+    Identifier "videocard_sm501"
+    Driver "siliconmotion"
+
+    # This will be automatically turned off when dual-head is enabled,
+    # but can be useful when dual-head is disabled.
+    Option "HWCursor" "true"
+
+    Option "VideoKey" "45000"
+    Option "UseBIOS" "false"
+    Option "PanelSize" "1360x768"
+
+    # Should work better, but this is unstable (white screen bug)
+    # Option "AccelMethod" "EXA"
+
+    Option "Dualhead" "off"
+EndSection
+
+Section "Screen"
+    Identifier "Screen_sm501"
+    Device "videocard_sm501"
+    DefaultDepth 16
+EndSection
