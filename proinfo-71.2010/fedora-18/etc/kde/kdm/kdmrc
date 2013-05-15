@@ -51,9 +51,9 @@ UseTheme=true
 Theme=/usr/share/kde4/apps/kdm/themes/SphericalCow
 
 [X-:*-Core]
+#ServerCmd=I am NOT using /lib/systemd/systemd-multi-seat-x
 ServerTimeout=30
-ServerArgsLocal=-background none -nolisten tcp
-TerminateServer=true
+TerminateServer=false
 AllowShutdown=All
 AutoLoginEnable=false
 AutoLoginLocked=false
@@ -66,11 +66,7 @@ FocusPasswd=true
 LoginMode=DefaultLocal
 
 [X-:0-Core]
-ServerCmd=/lib/systemd/systemd-multi-seat-x
-ServerArgsLocal=-background none -nolisten tcp -layout LayoutTN502 -seat seat0
-ServerVT=1
+ServerArgsLocal=-background none -nolisten tcp -seat seat1
 
 [X-:1-Core]
-ServerCmd=/lib/systemd/systemd-multi-seat-x
-ServerArgsLocal=-background none -nolisten tcp -layout LayoutIntel -seat seat1 -sharevts -novtswitch vt7
-ServerVT=9
+ServerArgsLocal=-background none -nolisten tcp -config xorg.conf.sm501 -seat seat0 -sharevts -novtswitch
