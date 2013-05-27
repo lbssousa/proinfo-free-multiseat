@@ -1,0 +1,24 @@
+From: Laércio de Sousa <lbsousajr@gmail.com>
+Subject: [PATCH] xfree86: support SM501 graphics card if seat is not seat0
+
+diff -up xorg-server-1.13.3/hw/xfree86/common/xf86Bus.c.orig xorg-server-1.13.3/hw/xfree86/common/xf86Bus.c
+--- xorg-server-1.13.3/hw/xfree86/common/xf86Bus.c.orig	2013-05-21 07:15:58.508153067 -0300
++++ xorg-server-1.13.3/hw/xfree86/common/xf86Bus.c	2013-05-21 07:30:05.749800737 -0300
+@@ -81,7 +81,7 @@ xf86CallDriverProbe(DriverPtr drv, Bool
+     if (drv->platformProbe != NULL) {
+         foundScreen = xf86platformProbeDev(drv);
+     }
+-    if (ServerIsNotSeat0())
++    if (ServerIsNotSeat0() && foundScreen)
+         return foundScreen;
+ #endif
+ 
+@@ -216,7 +216,7 @@ xf86BusProbe(void)
+ {
+ #ifdef XSERVER_PLATFORM_BUS
+     xf86platformProbe();
+-    if (ServerIsNotSeat0())
++    if (ServerIsNotSeat0() && xf86_num_platform_devices > 0)
+         return;
+ #endif
+ #ifdef XSERVER_LIBPCIACCESS
