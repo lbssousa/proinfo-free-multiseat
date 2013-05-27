@@ -18,7 +18,7 @@ Section "Device"
 EndSection
 
 Section "Screen"
-    Identifier "Screen_sm501"
+    Identifier "screen_sm501"
     Device "videocard_sm501"
 
     # A value of 24 here looks better, but has slower performance
