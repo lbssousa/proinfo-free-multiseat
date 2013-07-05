@@ -1,5 +1,0 @@
-[Display]
-Type=X11
-
-[X11]
-Exec=/usr/bin/Xorg $display -config $xorgconf -br -verbose -auth $auth $sharevts -novtswitch $vt
